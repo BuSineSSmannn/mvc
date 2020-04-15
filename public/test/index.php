@@ -24,7 +24,6 @@ class Registry
     {
         global $config;
         foreach ($config['components'] as $name => $component) {
-            echo $name;
             self::$objects[$name] = new $component;
         }
     }
@@ -43,7 +42,24 @@ class Registry
         var_dump(self::$objects);
         echo '</pre>';
     }
+
+    public function __get($name)
+    {
+        if (is_object(self::$objects[$name])) {
+            return self::$objects[$name];
+        }
+    }
+
+    public function __set($name, $object)
+    {
+        if (!isset(self::$objects[$name])) {
+            self::$objects[$name] = new $object;
+        }
+    }
 }
 
 $app = Registry::instance();
+$app->test->go();
+$app->test2 = 'classes\Test2';
 $app->getList();
+$app->test2->hello();

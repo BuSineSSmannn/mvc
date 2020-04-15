@@ -8,6 +8,6 @@ class Test
 {
     public function go()
     {
-        echo 'Poexali';
+        echo 'Kettik';
     }
 }
