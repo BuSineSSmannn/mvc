@@ -6,6 +6,7 @@ use vendor\core\Db;
 
 abstract class Model
 {
+
     protected $pdo;
     protected $table;
     protected $pk = 'id';
