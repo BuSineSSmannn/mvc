@@ -25,7 +25,8 @@
         <ul class="nav nav-pills nav-fill">
             <?php foreach ($menu as $item): ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="category/<?= $item['id'] ?>"><?= $item['title'] ?></a>
+                    <a class="nav-link"
+                       href="category/<?= $item['id'] ?>"><?= $item['title'] ?></a>
                 </li>
             <?php endforeach; ?>
         </ul>
@@ -33,10 +34,12 @@
 
     <?= $content ?>
 </div>
-
-<? //=debug(\vendor\core\Db::$countSql);?>
-<? //=debug(\vendor\core\Db::$queries);?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+<?php
+foreach ($scripts as $script) {
+    echo $script;
+}
+?>
 </body>
 </html>
