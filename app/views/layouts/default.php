@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="descripton" content="<?= $meta['desc'] ?>">
-    <meta name="keywords" content="<?= $meta['keywords'] ?>">
-    <title><?= $meta['title'] ?></title>
+    <?= \vendor\core\base\View::getMeta() ?>
 
     <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet">

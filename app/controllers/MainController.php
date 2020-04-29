@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\models\Main;
 use R;
 use vendor\core\App;
+use vendor\core\base\View;
 
 class MainController extends AppController
 {
@@ -22,21 +23,22 @@ class MainController extends AppController
         }
         $menu = $this->menu;
         $title = 'PAGE TITLE';
-        $this->setMeta(
+
+        View::setMeta(
             'Главная страница', 'Описание страницы', 'Ключливые слова'
         );
-        $post = R::find('posts', 'id = 1 LIMIT 1');
-        $meta = $this->meta;
         $this->set(compact('title', 'menu', 'posts', 'meta'));
     }
 
     public function testAction()
     {
         if ($this->isAjax()) {
-            echo 111;
+            $model = new Main();
+            $post = R::findOne('posts', "id = ?", [$_POST['id']]);
+            $this->loadView('_test', compact('post'));
             die;
         }
         echo 222;
-        $this->layout = 'test';
+//        $this->layout = false;
     }
 }

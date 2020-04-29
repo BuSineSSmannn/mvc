@@ -20,11 +20,5 @@ class AppController extends Controller
         $this->menu = R::findAll('category');
     }
 
-    protected function setMeta($title = '', $desc = '', $keywords = '')
-    {
-        $this->meta['title'] = $title;
-        $this->meta['desc'] = $desc;
-        $this->meta['keywords'] = $keywords;
-    }
 
 }

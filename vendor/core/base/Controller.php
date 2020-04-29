@@ -36,4 +36,10 @@ class Controller
             ) == 'xmlhttprequest';
     }
 
+    public function loadView($view, $vars = [])
+    {
+        extract($vars);
+        require APP . "/views/{$this->route['controller']}/{$view}.php";
+    }
+
 }
