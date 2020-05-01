@@ -15,7 +15,6 @@ class MainController extends AppController
     {
         $model = new Main();
 //        R::fancyDebug(true);
-
         $posts = APP::$app->cache->get('posts');
         if (!$posts) {
             $posts = R::findAll('posts');
