@@ -22,7 +22,9 @@ class ErrorHandler
     public function errorHandler($errno, $errstr, $errfile, $errline)
     {
         $this->logErrors($errstr, $errfile, $errline);
-        $this->displayError($errno, $errstr, $errfile, $errline);
+        if(DEBUG){
+            $this->displayError($errno, $errstr, $errfile, $errline);
+        }
         return true;
     }
 
@@ -64,9 +66,7 @@ class ErrorHandler
 
     }
 
-    public function displayError($errno, $errstr, $errfile, $errline,
-        int $rcode = 500
-    ) {
+    public function displayError($errno, $errstr, $errfile, $errline, $rcode = 500  ) {
 
         http_response_code($rcode);
         if ($rcode == 404) {

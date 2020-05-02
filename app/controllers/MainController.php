@@ -26,7 +26,7 @@ class MainController extends AppController
         View::setMeta(
             'Главная страница', 'Описание страницы', 'Ключливые слова'
         );
-        $this->set(compact('title', 'menu', 'posts', 'meta'));
+        $this->set(compact('title', 'menu', 'posts'));
     }
 
     public function testAction()

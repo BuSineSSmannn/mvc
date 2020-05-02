@@ -66,10 +66,8 @@ class Router
                 throw new \Exception("Контроллер $controller не найден", 404);
             }
         } else {
-//            http_response_code(404);
             throw new \Exception("Страница не найден", 404);
 
-//            include WWW.'/erros/404.html';
         }
     }
 
