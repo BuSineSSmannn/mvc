@@ -1,6 +1,24 @@
 <?php if (!empty($posts)): ?>
-    <button class="btn btn-success" id="send">Кнопка</button>
-    <?php foreach ($posts as $post): ?>
+    <div id="answer"></div>
+    <button class="btn btn-success" id="send">Кнопка</button><br>
+    <?php new \vendor\widgets\menu\Menu([
+            'tpl'=> WWW. '/menu/select.php',
+            'container' => 'select',
+            'class'=>'mymenu',
+            'table' => 'categories',
+            'cache'=>3600,
+            'cacheKey'=>'menu_select'
+    ]);?>
+    <?php new \vendor\widgets\menu\Menu([
+           'tpl'=> WWW. '/menu/mymenu.php',
+            'container' => 'ul',
+            'class'=>'mymenu',
+            'table' => 'categories',
+            'cache'=>3600,
+           'cacheKey'=>'menu_menu'
+
+    ]);?>
+    <?php  foreach ($posts as $post): ?>
         <div class="card ">
             <div class="card-heading">
                 <h3 class="card-title"><?= $post['title'] ?></h3>
@@ -20,7 +38,9 @@
                 type: 'post',
                 data: {'id': 2},
                 success: function (res) {
-                    console.log(res);
+                   // var data = JSON.parse(res);
+                   // $('#answer').html('<p> Ответ: ' +data.answer + ' | Код: '  + data.code +'</p>');
+                    $('#answer').html(res);
                 },
                 error: function () {
                     alert('Error!');

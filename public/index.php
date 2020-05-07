@@ -5,7 +5,7 @@ use vendor\core\Router;
 
 $query = rtrim($_SERVER["QUERY_STRING"], '/');
 
-define("DEBUG", 1);
+define('DEBUG', 1);
 define('WWW', __DIR__);
 define('CORE', dirname(__DIR__) . '/vendor/core');
 define('ROOT', dirname(__DIR__));
@@ -26,15 +26,16 @@ spl_autoload_register(
     }
 );
 new \vendor\core\App;
-Router::add(
-    '^page/(?P<action>[a-z-]+)/(?P<allias>[a-z-]+)$', ['controller' => 'Page']
-);
+
+Router::add('^page/(?P<action>[a-z-]+)/(?P<allias>[a-z-]+)$', ['controller' => 'Page']);
 Router::add('^page/(?P<allias>[a-z-]+)$', ['controller' => 'Page', 'action' => 'view']);
 
 //defaults routs
+Router::add('^admin$',['controller'=>'User','action'=>'index','prefix'=>'admin']);
+Router::add('^admin/?(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$',['prefix'=>'admin']);
 Router::add('^$', ['controller' => 'Main', 'action' => 'index']);
 Router::add('^(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$');
 
 Router::dispatch($query);
 
-//debug(Router::getRoute());
+

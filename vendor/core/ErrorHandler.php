@@ -4,6 +4,8 @@
 namespace vendor\core;
 
 
+use RedBeanPHP\Logger\RDefault\Debug;
+
 class ErrorHandler
 {
     public function __construct()
@@ -22,7 +24,7 @@ class ErrorHandler
     public function errorHandler($errno, $errstr, $errfile, $errline)
     {
         $this->logErrors($errstr, $errfile, $errline);
-        if(DEBUG){
+        if(DEBUG || in_array($errno,[E_USER_ERROR,E_RECOVERABLE_ERROR])){
             $this->displayError($errno, $errstr, $errfile, $errline);
         }
         return true;
@@ -69,7 +71,7 @@ class ErrorHandler
     public function displayError($errno, $errstr, $errfile, $errline, $rcode = 500  ) {
 
         http_response_code($rcode);
-        if ($rcode == 404) {
+        if ($rcode == 404 && !DEBUG) {
             require WWW . '/erros/404.html';
         } else if (DEBUG) {
             require WWW . '/erros/dev.php';
