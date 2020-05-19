@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?= \vendor\core\base\View::getMeta() ?>
+    <?= \fw\core\base\View::getMeta() ?>
 
     <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet">
@@ -19,16 +19,11 @@
 <div class="container">
     <h1>Adminka</h1>
 
-    <?php if (!empty($menu)) : ?>
         <ul class="nav nav-pills nav-fill">
-            <?php foreach ($menu as $item): ?>
-                <li class="nav-item">
-                    <a class="nav-link"
-                       href="category/<?= $item['id'] ?>"><?= $item['title'] ?></a>
-                </li>
-            <?php endforeach; ?>
+            <li class="nav-item"><a href="/" >Home</a></li>
+            <li class="nav-item"><a href="/page/about">About</a></li>
+            <li class="nav-item"><a href="/admin">Admin</a></li>
         </ul>
-    <?php endif; ?>
 
     <?= $content ?>
 </div>

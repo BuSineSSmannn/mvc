@@ -1,7 +1,7 @@
 <?php if (!empty($posts)): ?>
     <div id="answer"></div>
     <button class="btn btn-success" id="send">Кнопка</button><br>
-    <?php new \vendor\widgets\menu\Menu([
+    <?php new \fw\widgets\menu\Menu([
             'tpl'=> WWW. '/menu/select.php',
             'container' => 'select',
             'class'=>'mymenu',
@@ -9,7 +9,7 @@
             'cache'=>3600,
             'cacheKey'=>'menu_select'
     ]);?>
-    <?php new \vendor\widgets\menu\Menu([
+    <?php new \fw\widgets\menu\Menu([
            'tpl'=> WWW. '/menu/mymenu.php',
             'container' => 'ul',
             'class'=>'mymenu',

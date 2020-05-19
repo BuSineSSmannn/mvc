@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?= \vendor\core\base\View::getMeta() ?>
+    <?= \fw\core\base\View::getMeta() ?>
 
     <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet">
@@ -21,16 +21,19 @@
 
     <?php if (!empty($menu)) : ?>
         <ul class="nav nav-pills nav-fill">
+            <li class="nav-item"><a href="/" >Home</a></li>
+            <li class="nav-item"><a href="/page/about">About</a></li>
+            <li class="nav-item"><a href="/admin">Admin</a></li>
             <?php foreach ($menu as $item): ?>
-                <li class="nav-item">
-                    <a class="nav-link"
-                       href="category/<?= $item['id'] ?>"><?= $item['title'] ?></a>
-                </li>
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link"-->
+<!--                       href="category/--><?//= $item['id'] ?><!--">--><?//= $item['title'] ?><!--</a>-->
+<!--                </li>-->
             <?php endforeach; ?>
         </ul>
     <?php endif; ?>
 
-    <?= $content ?>
+    <?= $content??='' ?>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
