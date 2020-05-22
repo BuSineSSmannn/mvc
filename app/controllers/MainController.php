@@ -10,6 +10,7 @@ use R;
 use fw\core\App;
 use fw\core\base\View;
 
+
 class MainController extends AppController
 {
     public $layout = 'default';

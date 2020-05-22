@@ -1,0 +1,16 @@
+[2020-05-19 22:56:37] Текст ошибки: Страница не найден | Файл: E:\OpenServer\domains\mvc\vendor\fw\core\Router.php | Строка: 69
+=========================
+[2020-05-19 22:56:47] Текст ошибки: Контроллер app\controllers\AsdsadasdqweqweqweController не найден | Файл: E:\OpenServer\domains\mvc\vendor\fw\core\Router.php | Строка: 66
+=========================
+[2020-05-19 22:57:47] Текст ошибки: Контроллер app\controllers\AsdsadasdqweqweqweController не найден | Файл: E:\OpenServer\domains\mvc\vendor\fw\core\Router.php | Строка: 66
+=========================
+[2020-05-19 22:58:05] Текст ошибки: Контроллер app\controllers\AsdsadasdqweqweqweController не найден | Файл: E:\OpenServer\domains\mvc\vendor\fw\core\Router.php | Строка: 66
+=========================
+[2020-05-19 22:59:13] Текст ошибки: Контроллер app\controllers\AsdsadasdqweqweqweController не найден | Файл: E:\OpenServer\domains\mvc\vendor\fw\core\Router.php | Строка: 66
+=========================
+[2020-05-19 23:00:00] Текст ошибки: Контроллер app\controllers\AsdsadasdqweqweqweController не найден | Файл: E:\OpenServer\domains\mvc\vendor\fw\core\Router.php | Строка: 66
+=========================
+[2020-05-20 21:32:07] Текст ошибки: Страница не найден | Файл: E:\OpenServer\domains\mvc\vendor\fw\core\Router.php | Строка: 69
+=========================
+[2020-05-20 21:32:11] Текст ошибки: Trying to access array offset on value of type null | Файл: E:\OpenServer\domains\mvc\app\views\Main\_test.php | Строка: 1
+=========================
